@@ -1,2 +1,2 @@
 # project5
-Basic instructions go here.
+HomeTrac - Apartment Listing Website for Northwestern Students/Faculty.
