@@ -30,7 +30,7 @@ var properties = [
         bathroom: "1",
         price: "1900",
         lease_length: "3"
-    }
+    },
     {
         name: "Evanston Place Apartments",
         campus: "South",
@@ -38,7 +38,7 @@ var properties = [
         bathroom: "1",
         price: "1600",
         lease_length: "6"
-    }
+    },
     {
         name: "Plaza",
         campus: "North",
