@@ -1,3 +1,16 @@
+#logo {
+	position: relative;
+	left: 43%;
+	width: 200px;
+	height: 300px;
+	margin-top: 20px;
+}
+
+#logo img {
+	max-width:100%;
+	max-height:100%;
+}
+
 #title {
 	position: absolute;
 	text-align: center;
@@ -32,7 +45,7 @@
 
 .select-css {
 	display: inline-block;
-	font-size: 12px;
+	font-size: 13px;
 	font-family: sans-serif;
 	font-weight: 700;
 	color: #444;
@@ -76,7 +89,7 @@
 }
 
 .button {
-  background-color: gold; /* Green */
+  background-color: gold;
   border: none;
   color: black;
   padding: 8px 15px;
@@ -94,7 +107,6 @@
 .home-list-wrapper {
 	width: 40%;
 	height: 30%;
-	float: left;
 	display: inline-block;
 }
 
@@ -109,3 +121,6 @@
 	width: 50%;
 }
 
+.back-button {
+	width: 150px;
+}
