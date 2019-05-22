@@ -5,3 +5,7 @@
   display: flex;
 }
 
+#gmap {
+	height: 600;
+	width: 100%;
+}

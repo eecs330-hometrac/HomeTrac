@@ -1,16 +1,3 @@
-
-/*function map_markers() {
-    var myLatLng = {lat: 42.0451, lng: 87.6877};
-    var map = new google.maps.Map(document.getElementById('gmap'));
-    var marker = new google.maps.Marker({
-        position: myLatLng,
-        map: map,
-        title: 'Hello World!'
-    });
-}
-
-map_markers();*/
-
 var locations = [
     {
         name : "Evanston Place",
@@ -20,6 +7,8 @@ var locations = [
         num_bath : 2,
         rent : 1000,
         lease_len : 12,
+        lat: 42.049078,
+        lng: -87.677995,
         img : "evanston-place-apartments-evanston-il-meet-up-with-friends-on-the-social-deck-.jpg"
     },
     {
@@ -30,6 +19,8 @@ var locations = [
         num_bath : 2,
         rent : 1000,
         lease_len : 12,
+        lat : 42.053437, 
+        lng: -82.685229,
         img : "e2_home.jpg"
     },
     {
@@ -40,9 +31,29 @@ var locations = [
         num_bath : 2,
         rent : 600,
         lease_len : 9,
+        lat : 42.048161,
+        lng : -87.680473,
         img : "Carlson-Building-Evanston.jpg"
     }
 ];
+
+function initMap(){
+  var map = new google.maps.Map(document.getElementById('gmap'), {
+    zoom: 14,
+    center: {lat: 42.050436, lng: -87.682394}
+  });
+  setMarkers(map);
+}
+
+function setMarkers(map) {
+    for (var i = 0; i < locations.length; i++){
+      var marker = new google.maps.Marker({
+        position: {lat: locations[i].lat, lng: locations[i].lng},
+        map: map,
+        title: locations[i].name
+      });
+    }
+}
 
 $(function(){
   
