@@ -1,49 +1,4 @@
 
-/*function map_markers() {
-    var myLatLng = {lat: 42.0451, lng: 87.6877};
-    var map = new google.maps.Map(document.getElementById('gmap'));
-    var marker = new google.maps.Marker({
-        position: myLatLng,
-        map: map,
-        title: 'Hello World!'
-    });
-}
-
-map_markers();*/
-
-var locations = [
-    {
-        name : "Evanston Place",
-        address : "1715 Chicago Ave, Evanston, IL 60201",
-        campus_loc : "South",
-        num_bed : 2,
-        num_bath : 2,
-        rent : 1000,
-        lease_len : 12,
-        img : "evanston-place-apartments-evanston-il-meet-up-with-friends-on-the-social-deck-.jpg"
-    },
-    {
-        name : "E2 Apartments",
-        address : "1890 Maple Ave, Evanston, IL 60201",
-        campus_loc : "South",
-        num_bed : 2,
-        num_bath : 2,
-        rent : 1000,
-        lease_len : 12,
-        img : "e2_home.jpg"
-    },
-    {
-        name : "Carlson Apartments",
-        address : "636 Church St # 400, Evanston, IL 60201",
-        campus_loc : "South",
-        num_bed : 4,
-        num_bath : 2,
-        rent : 600,
-        lease_len : 9,
-        img : "Carlson-Building-Evanston.jpg"
-    }
-];
-
 $(function(){
   
   $("#campus_drop a").click(function(){
@@ -97,7 +52,14 @@ $(function(){
   });
 });
 
-function populate(locations, campus_loc, num_bed, num_bath, rent_low, rent_high, lease_len) {
+function populate() {
+    campus_loc = localStorage.getItem("campus_val");
+    num_bed = localStorage.getItem("bed_val");
+    num_bath = localStorage.getItem("bath_val");
+    rent_low = 0;
+    rent_high = 1000;
+    lease_len = localStorage.getItem("lease_val");
+
     let x = 0;
     let y = 0;
     let length = locations.length;
@@ -107,7 +69,8 @@ function populate(locations, campus_loc, num_bed, num_bath, rent_low, rent_high,
     
         for (loc of locations) { //Loop over all locations
 
-            if ((loc.campus_loc == campus_loc) && (loc.num_bed == num_bed) && (loc.num_bath == num_bath) && (loc.rent >= rent_low) && (loc.rent <= rent_high) && (loc.lease_len == lease_len)) { //Location Filtering
+            if ((loc.campus_loc == campus_loc) && (loc.num_bed == num_bed) && (loc.num_bath == num_bath) && (loc.rent >= rent_low)
+             && (loc.rent <= rent_high) && (loc.lease_len == lease_len)) { //Location Filtering
 
                 //Create a new list element and append it
                 let loc_result = document.createElement('li');
@@ -122,7 +85,7 @@ function populate(locations, campus_loc, num_bed, num_bath, rent_low, rent_high,
     }
 }
 
-populate(locations,"South",2,2,0,1000,12);
+//populate(locations,"South",2,2,0,1000,12);
 //console.log(localStorage.getItem("campus_val"));
 
 
