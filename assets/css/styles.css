@@ -5,3 +5,13 @@
   display: flex;
 }
 
+#content {
+	height: 250px;
+	width: 300px;
+}
+
+#bodyContent {
+	height: 180px;
+	display: inline-block;
+}
+

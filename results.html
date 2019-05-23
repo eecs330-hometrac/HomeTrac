@@ -90,10 +90,6 @@
 			    if (loc_list) {
 			    
 			        for (loc of locations) { //Loop over all locations
-			        	/*console.log(loc.campus_loc,loc.num_bed,loc.num_bath,loc.rent,loc.rent,loc.lease_len);
-			        	console.log((loc.campus_loc == campus_loc), (loc.num_bed == num_bed), (loc.num_bath == num_bath),(loc.rent >= rent_low),
-			        	 (loc.rent <= rent_high),(loc.lease_len == lease_len));*/
-
 			            if ((loc.campus_loc == campus_loc) && (loc.num_bed == num_bed) && (loc.num_bath == num_bath) && (loc.rent >= rent_low)
 			             && (loc.rent <= rent_high) && (loc.lease_len == lease_len)) { //Location Filtering
 			             		console.log("Found");
@@ -107,12 +103,13 @@
 			                loc_list.appendChild(loc_result);
 
 			                var contentString = 
-			                	`<div id="content">
-						            <div id="siteNotice">
-						            </div>
+			                	`<div class="container">
+        								<div class="row">
+			                	<div id="content">
 						            <h1 id="firstHeading" class="firstHeading">${loc.name}</h1>
 						            <div id="bodyContent">
-						            <p><b> Bedrooms: ${loc.num_bed} </b><b>Bathrooms: ${loc.num_bath} </b><b>Rent: ${loc.rent} </b><b>Lease Length: ${loc.lease_len}</b></p>
+						            <h6><b> Bedrooms: </h6> ${loc.num_bed} </b><b><h6>Bathrooms: </h6>${loc.num_bath} </b><b><h6>Rent: </h6>${loc.rent} </b><b><h6>Lease Length: </h6>${loc.lease_len}</b></h7>
+						            <img style="position: relative; float: right; width: 150px; bottom: 150px; height: 150px; left: 70px;" src="${loc.img}">
 
 						            </div>
 						            </div>`;
