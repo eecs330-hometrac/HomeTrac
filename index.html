@@ -1,72 +1,84 @@
-<!doctype html>
-<html lang="en">
-  <head>
+<!DOCTYPE html>
+<html>
+
+<head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="styles.css">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>HomeTrac</title>
-  </head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>HomeTrac2</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/Navigation-with-Button.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
 
-  <body>
-
-    <div id="logo">
-      <img src="images/logo.jpg">
+<body>
+    <div>
+        <nav class="navbar navbar-light navbar-expand-md navigation-clean-button">
+            <div class="container"><a class="navbar-brand" href="index.html">HomeTrac</a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse"
+                    id="navcol-1">
+                    <ul class="nav navbar-nav mr-auto">
+                        <li class="nav-item" role="presentation"><a class="nav-link active" href="#">Search</a></li>
+                        <li class="nav-item" role="presentation"><a class="nav-link invisible" href="#">Second Item</a></li>
+                        <li class="dropdown nav-item"><a class="dropdown-toggle nav-link invisible" data-toggle="dropdown" aria-expanded="false" href="#">Dropdown </a>
+                            <div class="dropdown-menu" role="menu"><a class="dropdown-item" role="presentation" href="#">First Item</a><a class="dropdown-item" role="presentation" href="#">Second Item</a><a class="dropdown-item" role="presentation" href="#">Third Item</a></div>
+                        </li>
+                    </ul><span class="navbar-text actions"> <a class="invisible login" href="#">Log In</a><a class="btn btn-light invisible action-button" role="button" href="#">Sign Up</a></span></div>
+            </div>
+        </nav>
     </div>
-
-    <div id="title">
-      <h1>Search for Apartments</h1>
+    <div class="jumbotron vertical-center">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col"><img src="images/logo2.jpeg" style="margin: 22px;width: 300px;"></div>
+            </div>
+            <div class="row text-center">
+                <div class="col"></div>
+            </div>
+            <div class="row text-center" style="height: 90px;">
+                <div class="col">
+                    <h1>Search for Apartments</h1>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-auto text-center align-self-center">
+                    <div class="dropdown shadow" style="font-size: 20px;"><button class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-expanded="false" id="campus_loc_btn" style="font-size: 20px;filter: brightness(100%) grayscale(0%) hue-rotate(0deg) saturate(100%);background-color: rgba(0,123,255,0.81);"
+                            type="button">Campus Location</button>
+                        <div class="dropdown-menu" role="menu" id="campus_drop"><a class="dropdown-item" role="presentation" href="#">North</a><a class="dropdown-item" role="presentation" href="#">South</a></div>
+                    </div>
+                </div>
+                <div class="col text-center align-self-center">
+                    <div class="dropdown shadow" style="font-size: 20px;width: 148px;"><button class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-expanded="false" id="bedroom_btn" style="font-size: 20px;width: 150px;background-color: rgba(0,123,255,0.8);" type="button">Bedrooms</button>
+                        <div class="dropdown-menu"
+                            role="menu" id="bedroom_drop"><a class="dropdown-item" role="presentation" href="#">1</a><a class="dropdown-item" role="presentation" href="#">2</a><a class="dropdown-item" role="presentation" href="#">3</a><a class="dropdown-item" role="presentation" href="#">4+</a></div>
+                    </div>
+                </div>
+                <div class="col text-center align-self-center">
+                    <div class="dropdown shadow" style="font-size: 20px;width: 149px;"><button class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-expanded="false" id="bath_btn" style="font-size: 20px;width: 150px;background-color: rgba(0,123,255,0.8);" type="button">Bathrooms</button>
+                        <div class="dropdown-menu"
+                            role="menu" id="bath_drop"><a class="dropdown-item" role="presentation" href="#">1</a><a class="dropdown-item" role="presentation" href="#">2</a><a class="dropdown-item" role="presentation" href="#">3</a><a class="dropdown-item" role="presentation" href="#">4+</a></div>
+                    </div>
+                </div>
+                <div class="col text-center align-self-center">
+                    <div class="dropdown shadow" style="font-size: 20px;width: 146px;"><button class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-expanded="false" id="rent_btn" style="font-size: 20px;width: 150px;background-color: rgba(0,123,255,0.8);" type="button">Rent Range</button>
+                        <div class="dropdown-menu"
+                            role="menu" id="rent_drop"><a class="dropdown-item" role="presentation" href="#">$0 - $500</a><a class="dropdown-item" role="presentation" href="#">$500 - $750</a><a class="dropdown-item" role="presentation" href="#">$750 - $1000<br></a><a class="dropdown-item"
+                                role="presentation" href="#">$1000+<br></a></div>
+                    </div>
+                </div>
+                <div class="col text-center align-self-center">
+                    <div class="dropdown shadow" style="font-size: 20px;width: 110px;"><button class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-expanded="false" id="lease_btn" style="font-size: 20px;background-color: rgba(0,123,255,0.8);" type="button">Lease Length</button>
+                        <div class="dropdown-menu"
+                            role="menu" id="lease_drop"><a class="dropdown-item" role="presentation" href="#">3 Months</a><a class="dropdown-item" role="presentation" href="#">6 Months</a><a class="dropdown-item" role="presentation" href="#">9 Months</a><a class="dropdown-item" role="presentation"
+                                href="#">12 Months</a></div>
+                    </div>
+                </div>
+                <div class="col text-right align-self-center"><a class="btn btn-primary shadow" role="button" id="search_btn" style="font-size: 28px;background-color: rgb(255,235,49);color: #000000;" href="results.html">Search</a></div>
+            </div>
+        </div>
     </div>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/results.js"></script>
+</body>
 
-    <div class="search">
-
-      <div class="search-menus">
-
-        <select class="select-css">
-          <option selected>Campus Location</option>
-          <option>North Campus</option>
-          <option>South Campus</option>
-        </select>
-
-        <select class="select-css">
-          <option selected># of Bedrooms</option>
-          <option>1</option>
-          <option>2</option>
-          <option>3</option>
-          <option>4+</option>
-        </select>
-
-        <select class="select-css">
-          <option selected># of Bathrooms</option>
-          <option>1</option>
-          <option>2</option>
-          <option>3</option>
-          <option>4+</option>
-        </select>
-
-        <select class="select-css">
-          <option selected>Rent Range</option>
-          <option>$0 - $500</option>
-          <option>$500 - $750</option>
-          <option>$750 - $1,000</option>
-          <option>$1,000+</option>
-        </select>
-
-        <select class="select-css">
-          <option selected>Lease Length</option>
-          <option>Less than 3 Months</option>
-          <option>3 - 6 Months</option>
-          <option>6 - 9 Months</option>
-          <option>12 Months+</option>
-        </select>
-
-        <button class="button"> <a href="https://eecs330-hometrac.github.io/HomeTrac/search_result_p1.html"> Go </a> </button>  <!-- added link to result page-->
-
-      </div>
-
-    </div>
-
-
-  </body>
 </html>

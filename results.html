@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>HomeTrac2</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/Navigation-with-Button.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <script>
+      var map;
+      var locations = [
+	    	{
+	        name : "Evanston Place",
+	        address : "1715 Chicago Ave, Evanston, IL 60201",
+	        campus_loc : "South",
+	        num_bed : 2,
+	        num_bath : 2,
+	        rent : 500,
+	        lease_len : "12 Months",
+	        latitude: 42.049078,
+        	longitude: -87.677995,
+	        img : "images/evanston-place-apartments-evanston-il-meet-up-with-friends-on-the-social-deck-.jpg"
+	    	},
+	    	{
+	        name : "E2 Apartments",
+	        address : "1890 Maple Ave, Evanston, IL 60201",
+	        campus_loc : "South",
+	        num_bed : 2,
+	        num_bath : 2,
+	        rent : 600,
+	        lease_len : "12 Months",
+	        latitude : 42.053437, 
+        	longitude: -87.685229,
+	        img : "images/e2_home.jpg"
+	    	},
+	    	{
+	        name : "Carlson Apartments",
+	        address : "636 Church St # 400, Evanston, IL 60201",
+	        campus_loc : "South",
+	        num_bed : 4,
+	        num_bath : 2,
+	        rent : 600,
+	        lease_len : "9 Months",
+	        latitude : 42.048161,
+        	longitude : -87.680473,
+	        img : "images/Carlson-Building-Evanston.jpg
+	    	}
+			];
+
+			function bindInfoWindow(marker, map, infowindow) {
+    		marker.addListener('click', function() {
+	        infowindow.open(map, marker);
+    		});
+			} 
+
+			function setMarkers(map) {
+					campus_loc = localStorage.getItem("campus_val");
+			    num_bed = localStorage.getItem("bed_val");
+			    num_bath = localStorage.getItem("bath_val");
+			    rent_val = localStorage.getItem("rent_val");
+
+			    if (rent_val == "$0 - $500") {
+			    	rent_low = 0;
+			    	rent_high = 500;
+			    }
+			    else if (rent_val == "$500 - $750") {
+			    	rent_low = 500;
+			    	rent_high = 750;
+			    }
+			    else if (rent_val == "$750 - $1000") {
+			    	rent_low = 750;
+			    	rent_high = 1000;
+			    }
+			    else {
+			    	rent_low = 1000;
+			    	rent_high = 100000;
+			    }
+			    
+			    lease_len = localStorage.getItem("lease_val");
+			    console.log(rent_val);
+
+			    let x = 0;
+			    let y = 0;
+			    let i = 0;
+			    let length = locations.length;
+			    
+			    var loc_list = document.getElementById("result_list");
+			    if (loc_list) {
+			    
+			        for (loc of locations) { //Loop over all locations
+			        	/*console.log(loc.campus_loc,loc.num_bed,loc.num_bath,loc.rent,loc.rent,loc.lease_len);
+			        	console.log((loc.campus_loc == campus_loc), (loc.num_bed == num_bed), (loc.num_bath == num_bath),(loc.rent >= rent_low),
+			        	 (loc.rent <= rent_high),(loc.lease_len == lease_len));*/
+
+			            if ((loc.campus_loc == campus_loc) && (loc.num_bed == num_bed) && (loc.num_bath == num_bath) && (loc.rent >= rent_low)
+			             && (loc.rent <= rent_high) && (loc.lease_len == lease_len)) { //Location Filtering
+			             		console.log("Found");
+
+			                //Create a new list element and append it
+			                let loc_result = document.createElement('li');
+			                loc_result.classList.add("list-group-item");
+			                loc_result.innerHTML =
+			                    `<span>${loc.name}<br>Rent: ${loc.rent}<br>Beds: ${loc.num_bed}</span>
+			                    <img style="max-width: 60%; max-height: 20%" class="float-right" src="${loc.img}"/>`;
+			                loc_list.appendChild(loc_result);
+
+			                var contentString = 
+			                	`<div id="content">
+						            <div id="siteNotice">
+						            </div>
+						            <h1 id="firstHeading" class="firstHeading">${loc.name}</h1>
+						            <div id="bodyContent">
+						            <p><b> Bedrooms: ${loc.num_bed} </b><b>Bathrooms: ${loc.num_bath} </b><b>Rent: ${loc.rent} </b><b>Lease Length: ${loc.lease_len}</b></p>
+
+						            </div>
+						            </div>`;
+						          var infowindow = new google.maps.InfoWindow({
+							          content: contentString
+							        });
+
+			                var marker = new google.maps.Marker({
+								        position: {lat: loc.latitude, lng: loc.longitude},
+								        map: map,
+								        title: loc.name
+								      });
+								      bindInfoWindow(marker,map,infowindow);
+			            }
+			        }
+			    }
+			};
+
+      function initMap() {
+        map = new google.maps.Map(document.getElementById('map'), {
+          center: {lat: 42.0451, lng: -87.6877},
+          zoom: 13
+        });
+        setMarkers(map);
+      };
+      
+    </script>
+</head>
+
+
+<body class="text-monospace">
+    <div>
+        <nav class="navbar navbar-light navbar-expand-md navigation-clean-button">
+            <div class="container"><a class="navbar-brand" href="index.html">HomeTrac</a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse"
+                    id="navcol-1">
+                    <ul class="nav navbar-nav mr-auto">
+                        <li class="nav-item" role="presentation"><a class="nav-link" href="index.html">Search</a></li>
+                        <li class="nav-item" role="presentation"><a class="nav-link active" href="#">Results</a></li>
+                        <li class="dropdown nav-item"><a class="dropdown-toggle nav-link d-none" data-toggle="dropdown" aria-expanded="false" href="#">Dropdown </a>
+                            <div class="dropdown-menu" role="menu"><a class="dropdown-item" role="presentation" href="#">First Item</a><a class="dropdown-item" role="presentation" href="#">Second Item</a><a class="dropdown-item" role="presentation" href="#">Third Item</a></div>
+                        </li>
+                    </ul><span class="navbar-text actions"> <a class="invisible login" href="#">Log In</a><a class="btn btn-light invisible action-button" role="button" href="#">Sign Up</a></span></div>
+            </div>
+        </nav>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8">
+            	<div id="map" style="width: 100%; height: 600px"></div>
+            	<!--<iframe class="shadow-lg" allowfullscreen="" frameborder="0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAd5PsL7iG2zj0R3AS0ze19hOg0BPt5aLQ&amp;q=Evanston%2C+Illinois&amp;zoom=13" id="gmap" width="100%" height="600"></iframe>-->
+            </div>
+            <div
+                class="col text-left">
+                <ul class="list-group border rounded-0" id="result_list"></ul>
+        </div>
+    </div>
+    </div>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/results.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAd5PsL7iG2zj0R3AS0ze19hOg0BPt5aLQ&callback=initMap" async defer></script>
+</body>
+
+</html>
