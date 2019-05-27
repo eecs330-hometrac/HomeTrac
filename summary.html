@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>HomeTrac2</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora">
+    <link rel="stylesheet" href="assets/css/Article-Dual-Column.css">
+    <link rel="stylesheet" href="assets/css/Contact-Form-Clean.css">
+    <link rel="stylesheet" href="assets/css/Navigation-with-Button.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+
+<body onload="summ_func()">
+    <div>
+        <nav class="navbar navbar-light navbar-expand-md navigation-clean-button sticky-top">
+            <div class="container"><a class="navbar-brand" href="index.html">HomeTrac</a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse"
+                    id="navcol-1">
+                    <ul class="nav navbar-nav mr-auto">
+                        <li class="nav-item" role="presentation"><a class="nav-link" href="index.html">Search</a></li><i class="fa fa-long-arrow-right" style="position: relative;top: 12px;"></i>
+                        <li class="nav-item" role="presentation"><a class="nav-link" href="results.html">Results</a></li><i class="fa fa-long-arrow-right" style="position: relative;top: 12px;"></i>
+                        <li class="nav-item" role="presentation"><a class="nav-link active" href="summary.html">Summary</a></li>
+                    </ul><span class="navbar-text actions"> <a class="invisible login" href="#">Log In</a><a id = "compare_btn" class="btn btn-light tour_btn action-button" role="button" href="compare.html">Compare</a></span></div>
+            </div>
+        </nav>
+    </div>
+    <div class="article-dual-column">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-10 offset-md-1">
+                    <div class="intro">
+                        <h1 id="name_header" class="text-center">Property Name</h1>
+                        <p id="address_header" class="text-center">address</p>
+                        <img id="img_header" class="img-fluid" src="assets/img/desk.jpg"></div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-10 col-lg-3 offset-md-1">
+                    <div class="toc">
+                        <p>Table of Contents</p>
+                        <ul>
+                            <li><a href="#overview">Overview</a> </li>
+                            <li><a href="#amen">Amentities</a></li>
+                            <li><a href="#review">Reviews</a></li>
+                        </ul>
+                    </div><a id = "tour_btn2" class="btn btn-light action-button" role="button" href="contact.html" style="margin-top: 100px;background-color: rgb(165,102,215);color: rgb(255,255,255);">Request a Tour</a>
+                    <h6 id="review" style="margin-top: 100px;"><strong>Reviews</strong></h6>
+                    <div role="tablist" id="accordion-1">
+                        <div class="card">
+                            <div class="card-header" role="tab" style="margin: 0px;">
+                                <h6 class="mb-0"><a data-toggle="collapse" aria-expanded="false" aria-controls="accordion-1 .item-1" href="div#accordion-1 .item-1">Review #1</a></h6>
+                            </div>
+                            <div class="collapse item-1" role="tabpanel" data-parent="#accordion-1">
+                                <div class="card-body">
+                                    <p class="card-text">Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header" role="tab">
+                                <h6 class="mb-0"><a data-toggle="collapse" aria-expanded="false" aria-controls="accordion-1 .item-2" href="div#accordion-1 .item-2">Review #2</a></h6>
+                            </div>
+                            <div class="collapse item-2" role="tabpanel" data-parent="#accordion-1">
+                                <div class="card-body">
+                                    <p class="card-text">Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <div class="card-header" role="tab">
+                                <h6 class="mb-0"><a data-toggle="collapse" aria-expanded="false" aria-controls="accordion-1 .item-3" href="div#accordion-1 .item-3">Review #3</a></h6>
+                            </div>
+                            <div class="collapse item-3" role="tabpanel" data-parent="#accordion-1">
+                                <div class="card-body">
+                                    <p class="card-text">Nullam id dolor id nibh ultricies vehicula ut id elit. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-10 col-lg-7 offset-md-1 offset-lg-0">
+                    <div class="text">
+                        <h2 id="overview">Overview</h2>
+                        <p id="sum_desc">Description:</p>
+                        <p id="sum_dist">Distance From Campus:&nbsp;</p>
+                        <p id="sum_bed">Number of Bedrooms:&nbsp;</p>
+                        <p id="sum_bath">Number of Bathrooms:&nbsp;</p>
+                        <p id="sum_rent">Rent:&nbsp;</p>
+                        <p id="sum_lease">Lease &nbsp;Length:&nbsp;</p>
+                        <h2 id="amen">Amenities</h2>
+                        <p><u>Features:</u> High Speed Internet Access, Wi-Fi, Washer/Dryer, Heating, Smoke Free, Cable Ready &nbsp;</p>
+                        <p><u>Kitchen:</u> Dishwasher, Disposal, Ice Maker, Granite Countertops, Stainless Steel Appliances &nbsp;</p>
+                        <p><u>Living Space:</u> Hardwood Floors, Carpet, Tile Floors, Vinyl Flooring, Dining Room &nbsp;</p>
+                        <figure class="figure"><img class="figure-img" src="assets/img/floorplan.jpg">
+                            <figcaption class="figure-caption">Floor Plan</figcaption>
+                        </figure>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/results.js"></script>
+</body>
+
+</html>
