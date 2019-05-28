@@ -15,6 +15,18 @@
     <script>
       var map;
       var locations = [
+      		{
+	        name : "Evanston Place",
+	        address : "1715 Chicago Ave, Evanston, IL 60201",
+	        campus_loc : "South",
+	        num_bed : 1,
+	        num_bath : 1,
+	        rent : 300,
+	        lease_len : "12 Months",
+	        latitude: 42.049078,
+        	longitude: -87.677995,
+	        img : "images/evanston-place-apartments-evanston-il-meet-up-with-friends-on-the-social-deck-.jpg"
+	    	},
 	    	{
 	        name : "Evanston Place",
 	        address : "1715 Chicago Ave, Evanston, IL 60201",
@@ -26,6 +38,30 @@
 	        latitude: 42.049078,
         	longitude: -87.677995,
 	        img : "images/evanston-place-apartments-evanston-il-meet-up-with-friends-on-the-social-deck-.jpg"
+	    	},
+	    	{
+	        name : "Evanston Place",
+	        address : "1715 Chicago Ave, Evanston, IL 60201",
+	        campus_loc : "South",
+	        num_bed : 3,
+	        num_bath : 3,
+	        rent : 900,
+	        lease_len : "12 Months",
+	        latitude: 42.049078,
+        	longitude: -87.677995,
+	        img : "images/evanston-place-apartments-evanston-il-meet-up-with-friends-on-the-social-deck-.jpg"
+	    	},
+	    	{
+	        name : "E2 Apartments",
+	        address : "1890 Maple Ave, Evanston, IL 60201",
+	        campus_loc : "South",
+	        num_bed : 1,
+	        num_bath : 1,
+	        rent : 400,
+	        lease_len : "12 Months",
+	        latitude : 42.053437, 
+        	longitude: -87.685229,
+	        img : "images/e2_home.JPG"
 	    	},
 	    	{
 	        name : "E2 Apartments",
@@ -40,16 +76,208 @@
 	        img : "images/e2_home.JPG"
 	    	},
 	    	{
+	        name : "E2 Apartments",
+	        address : "1890 Maple Ave, Evanston, IL 60201",
+	        campus_loc : "South",
+	        num_bed : 3,
+	        num_bath : 3,
+	        rent : 1000,
+	        lease_len : "12 Months",
+	        latitude : 42.053437, 
+        	longitude: -87.685229,
+	        img : "images/e2_home.JPG"
+	    	},
+	    	{
+	        name : "E2 Apartments",
+	        address : "1890 Maple Ave, Evanston, IL 60201",
+	        campus_loc : "South",
+	        num_bed : 4,
+	        num_bath : 3,
+	        rent : 1200,
+	        lease_len : "12 Months",
+	        latitude : 42.053437, 
+        	longitude: -87.685229,
+	        img : "images/e2_home.JPG"
+	    	},
+	    	{
+	        name : "Carlson Apartments",
+	        address : "636 Church St # 400, Evanston, IL 60201",
+	        campus_loc : "South",
+	        num_bed : 1,
+	        num_bath : 1,
+	        rent : 300,
+	        lease_len : "3 Months",
+	        latitude : 42.048161,
+        	longitude : -87.680473,
+	        img : "images/Carlson-Building-Evanston.jpg"
+	    	},
+	    	{
+	        name : "Carlson Apartments",
+	        address : "636 Church St # 400, Evanston, IL 60201",
+	        campus_loc : "South",
+	        num_bed : 2,
+	        num_bath : 1,
+	        rent : 500,
+	        lease_len : "3 Months",
+	        latitude : 42.048161,
+        	longitude : -87.680473,
+	        img : "images/Carlson-Building-Evanston.jpg"
+	    	},
+	    	{
+	        name : "Carlson Apartments",
+	        address : "636 Church St # 400, Evanston, IL 60201",
+	        campus_loc : "South",
+	        num_bed : 3,
+	        num_bath : 2,
+	        rent : 700,
+	        lease_len : "3 Months",
+	        latitude : 42.048161,
+        	longitude : -87.680473,
+	        img : "images/Carlson-Building-Evanston.jpg"
+	    	},
+	    	{
 	        name : "Carlson Apartments",
 	        address : "636 Church St # 400, Evanston, IL 60201",
 	        campus_loc : "South",
 	        num_bed : 4,
 	        num_bath : 2,
-	        rent : 600,
-	        lease_len : "9 Months",
+	        rent : 900,
+	        lease_len : "3 Months",
 	        latitude : 42.048161,
         	longitude : -87.680473,
 	        img : "images/Carlson-Building-Evanston.jpg"
+	    	},
+	    	{
+	        name : "The Link Evanston",
+	        address : "811 Emerson St, Evanston, IL 60201",
+	        campus_loc : "North",
+	        num_bed : 1,
+	        num_bath : 1,
+	        rent : 400,
+	        lease_len : "6 Months",
+	        latitude : 42.052278,
+        	longitude : -87.682902,
+	        img : "images/the-link.jpg"
+	    	},
+	    	{
+	        name : "The Link Evanston",
+	        address : "811 Emerson St, Evanston, IL 60201",
+	        campus_loc : "North",
+	        num_bed : 2,
+	        num_bath : 2,
+	        rent : 600,
+	        lease_len : "6 Months",
+	        latitude : 42.052278,
+        	longitude : -87.682902,
+	        img : "images/the-link.jpg"
+	    	},
+	    	{
+	        name : "The Link Evanston",
+	        address : "811 Emerson St, Evanston, IL 60201",
+	        campus_loc : "North",
+	        num_bed : 3,
+	        num_bath : 3,
+	        rent : 900,
+	        lease_len : "6 Months",
+	        latitude : 42.052278,
+        	longitude : -87.682902,
+	        img : "images/the-link.jpg"
+	    	},
+	    	{
+	        name : "The Link Evanston",
+	        address : "811 Emerson St, Evanston, IL 60201",
+	        campus_loc : "North",
+	        num_bed : 4,
+	        num_bath : 4,
+	        rent : 1300,
+	        lease_len : "6 Months",
+	        latitude : 42.052278,
+        	longitude : -87.682902,
+	        img : "images/the-link.jpg"
+	    	},
+	    	{
+	        name : "The Reserve",
+	        address : "1930 Ridge Ave, Evanston, IL 60201",
+	        campus_loc : "North",
+	        num_bed : 1,
+	        num_bath : 1,
+	        rent : 350,
+	        lease_len : "9 Months",
+	        latitude : 42.053497,
+        	longitude : -87.687702,
+	        img : "images/the-reserve.jpg"
+	    	},
+	    	{
+	        name : "The Reserve",
+	        address : "1930 Ridge Ave, Evanston, IL 60201",
+	        campus_loc : "North",
+	        num_bed : 2,
+	        num_bath : 1,
+	        rent : 550,
+	        lease_len : "9 Months",
+	        latitude : 42.053497,
+        	longitude : -87.687702,
+	        img : "images/the-reserve.jpg"
+	    	},
+	    	{
+	        name : "The Reserve",
+	        address : "1930 Ridge Ave, Evanston, IL 60201",
+	        campus_loc : "North",
+	        num_bed : 3,
+	        num_bath : 1,
+	        rent : 800,
+	        lease_len : "9 Months",
+	        latitude : 42.053497,
+        	longitude : -87.687702,
+	        img : "images/the-reserve.jpg"
+	    	},
+	    	{
+	        name : "2257 Ridge Ave",
+	        address : "2257 Ridge Ave, Evanston, IL 60201",
+	        campus_loc : "North",
+	        num_bed : 1,
+	        num_bath : 1,
+	        rent : 270,
+	        lease_len : "12 Months",
+	        latitude : 42.059363,
+        	longitude : -87.685298,
+	        img : "images/2257-ridge.jpg"
+	    	},
+	    	{
+	        name : "2257 Ridge Ave",
+	        address : "2257 Ridge Ave, Evanston, IL 60201",
+	        campus_loc : "North",
+	        num_bed : 2,
+	        num_bath : 2,
+	        rent : 450,
+	        lease_len : "12 Months",
+	        latitude : 42.059363,
+        	longitude : -87.685298,
+	        img : "images/2257-ridge.jpg"
+	    	},
+	    	{
+	        name : "2257 Ridge Ave",
+	        address : "2257 Ridge Ave, Evanston, IL 60201",
+	        campus_loc : "North",
+	        num_bed : 3,
+	        num_bath : 3,
+	        rent : 600,
+	        lease_len : "12 Months",
+	        latitude : 42.059363,
+        	longitude : -87.685298,
+	        img : "images/2257-ridge.jpg"
+	    	},
+	    	{
+	        name : "2257 Ridge Ave",
+	        address : "2257 Ridge Ave, Evanston, IL 60201",
+	        campus_loc : "North",
+	        num_bed : 4,
+	        num_bath : 4,
+	        rent : 1100,
+	        lease_len : "12 Months",
+	        latitude : 42.059363,
+        	longitude : -87.685298,
+	        img : "images/2257-ridge.jpg"
 	    	}
 			];
 
