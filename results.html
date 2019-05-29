@@ -333,7 +333,7 @@
 			                loc_result.classList.add("list-group-item");
 			                loc_result.innerHTML =
 			                    `<span>${loc.name}<br>Rent: ${loc.rent}<br>Beds: ${loc.num_bed}</span>
-			                    <img style="max-width: 60%; max-height: 20%" class="float-right" src="${loc.img}"/>`;
+			                    <a id="summ_link" href="summary.html?text=${loc.name}"><img style="max-width: 60%; max-height: 20%" class="float-right" src="${loc.img}"/></a>`;
 			                loc_list.appendChild(loc_result);
 
 			                var contentString = 
