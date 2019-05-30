@@ -355,7 +355,7 @@ function summ_func() {
 $(function(){
   
   $("#send_btn").click(function(){
-    alert("Sent")
+    //alert("Sent")
     console.log("Sent");
     document.getElementById("sent").display = visible;
   });
