@@ -367,6 +367,12 @@ function compareTo() {
   let num_bed = localStorage.getItem("bed_val");
   let num_bath = localStorage.getItem("bath_val");
   let rent_val = localStorage.getItem("rent_val");
+  let lease_len = localStorage.getItem("lease_val");
+          let temp_campus_loc = campus_loc;
+          let temp_num_bed = num_bed;
+          let temp_num_bath = num_bath;
+          let temp_lease_len = lease_len;  
+          
 
           if (rent_val == "$0 - $500") {
             rent_low = 0;
@@ -383,10 +389,10 @@ function compareTo() {
           else {
             rent_low = 1000;
             rent_high = 100000;
-          }
+          } 
           
-          lease_len = localStorage.getItem("lease_val");
-          console.log(rent_val);
+          let temp_rent_low = rent_low;
+          let temp_rent_high = rent_high;
 
           let x = 0;
           let y = 0;
@@ -395,11 +401,29 @@ function compareTo() {
           
           var loc_list = document.getElementById("compare_list");
           if (loc_list) {
-          
               for (loc of locations) { //Loop over all locations
-                  if ((loc.campus_loc == campus_loc) && (loc.num_bed == num_bed) && (loc.num_bath == num_bath) && (loc.rent >= rent_low)
-                   && (loc.rent <= rent_high) && (loc.lease_len == lease_len)  && (loc.name != comp_name)) { //Location Filtering
-                      console.log("Found");
+
+                  if (campus_loc == "undef") {
+                    temp_campus_loc = loc.campus_loc;
+                  }
+                  if (num_bed == "undef") {
+                    temp_num_bed = loc.num_bed;
+                  }
+                  if (num_bath == "undef") {
+                    temp_num_bath = loc.num_bath;
+                  }
+                  if (rent_val == "undef") {
+                    temp_rent_low = 0;
+                    temp_rent_high = 5000;
+                  }
+                  if (lease_len == "undef") {
+                    temp_lease_len = loc.lease_len;
+                  }
+
+
+
+                  if ((loc.campus_loc == temp_campus_loc) && (loc.num_bed == temp_num_bed) && (loc.num_bath == temp_num_bath) && (loc.rent >= temp_rent_low)
+                   && (loc.rent <= temp_rent_high) && (loc.lease_len == temp_lease_len)  && (loc.name != comp_name)) { //Location Filtering
 
                       //Create a new list element and append it
                       let loc_result = document.createElement('li');
@@ -439,6 +463,14 @@ function contact() {
       document.getElementById("contact_header").innerHTML = "Request a tour of " + loc.name;
     }
   } 
+}
+
+function index() {
+  localStorage.setItem("campus_val","undef");
+  localStorage.setItem("bed_val","undef");
+  localStorage.setItem("bath_val","undef");
+  localStorage.setItem("rent_val","undef");
+  localStorage.setItem("lease_val","undef");
 }
 
 
