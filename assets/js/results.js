@@ -346,7 +346,7 @@ function summ_func() {
       document.getElementById("sum_lease").innerHTML = "<u>Lease Length:</u> " + loc.lease_len;
 
       document.getElementById("compare_btn").href = "compareTo.html?text=" + encodeURI(loc.name);
-      document.getElementById("tour_btn2").href = "contact.html?text=" + encodeURI(loc.name);
+      document.getElementById("compare_btn2").href = "compareTo.html?text=" + encodeURI(loc.name);
     }
   }
 
@@ -363,6 +363,7 @@ $(function(){
 
 function compareTo() {
   let comp_name = decodeURI(getUrlParam('text','Empty'));
+  document.getElementById("summary_btn").href = "summary.html?text=" + comp_name;
   let campus_loc = localStorage.getItem("campus_val");
   let num_bed = localStorage.getItem("bed_val");
   let num_bath = localStorage.getItem("bath_val");
@@ -440,6 +441,10 @@ function compareTo() {
 function compare() {
   let first = decodeURI(getUrlParam('first','Empty'));
   let next = decodeURI(getUrlParam('next','Empty'));
+  document.getElementById("summary_btn").href = "summary.html?text=" + first;
+  document.getElementById("tour_btn1").href = "contact.html?text=" + first;
+  document.getElementById("tour_btn2").href = "contact.html?text=" + next;
+
   console.log(first,next);
 
   for (loc of locations) {
