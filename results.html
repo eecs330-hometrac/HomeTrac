@@ -285,12 +285,12 @@
 
 			function bindInfoWindow(marker, map, infowindow) {
     		marker.addListener('click', function() {
-	        infowindow.open(map, marker);
+	        	infowindow.open(map, marker);
     		});
 			} 
 
 			function setMarkers(map) {
-					campus_loc = localStorage.getItem("campus_val");
+				campus_loc = localStorage.getItem("campus_val");
 			    num_bed = localStorage.getItem("bed_val");
 			    num_bath = localStorage.getItem("bath_val");
 			    rent_val = localStorage.getItem("rent_val");
@@ -425,8 +425,7 @@
             	<div id="map" style="width: 100%; height: 600px"></div>
             	<!--<iframe class="shadow-lg" allowfullscreen="" frameborder="0" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyAd5PsL7iG2zj0R3AS0ze19hOg0BPt5aLQ&amp;q=Evanston%2C+Illinois&amp;zoom=13" id="gmap" width="100%" height="600"></iframe>-->
             </div>
-            <div
-                class="col text-left">
+            <div class="col text-left">
                 <ul class="list-group border rounded-0" id="result_list"></ul>
         </div>
     </div>
