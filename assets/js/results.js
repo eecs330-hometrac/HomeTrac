@@ -364,6 +364,8 @@ $(function(){
 function compareTo() {
   let comp_name = decodeURI(getUrlParam('text','Empty'));
   document.getElementById("summary_btn").href = "summary.html?text=" + comp_name;
+  document.getElementById("compareTo_name").innerHTML = comp_name;
+  document.getElementById("compareTo_des").innerHTML = "Click on another listing to compare with " + comp_name;
   let campus_loc = localStorage.getItem("campus_val");
   let num_bed = localStorage.getItem("bed_val");
   let num_bath = localStorage.getItem("bath_val");
@@ -404,6 +406,10 @@ function compareTo() {
           if (loc_list) {
               for (loc of locations) { //Loop over all locations
 
+                  if (loc.name == comp_name) {
+                      document.getElementById("compareTo_img").src = loc.img;
+                  }
+
                   if (campus_loc == "undef") {
                     temp_campus_loc = loc.campus_loc;
                   }
@@ -431,7 +437,7 @@ function compareTo() {
                       loc_result.classList.add("list-group-item");
                       loc_result.innerHTML =
                           `<span>${loc.name}<br>Rent: ${loc.rent}<br>Beds: ${loc.num_bed}</span>
-                          <a href="compare.html?first=${comp_name}&next=${loc.name}"><img style="max-width: 50%; max-height: 40%" class="float-right" src="${loc.img}"/></a>`;
+                          <a href="compare.html?first=${comp_name}&next=${loc.name}"><img style="position: relative; right: 100px; max-width: 250px; max-height: 50%" class="float-right" src="${loc.img}"/></a>`;
                       loc_list.appendChild(loc_result);
                     }
               }
