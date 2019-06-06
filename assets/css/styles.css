@@ -22,11 +22,11 @@
 }
 
 a:hover {
-	background-color: yellow;
+	background-color: aqua;
 }
 
 a:hover img {
 	border-style: solid;
 	border-width: 3px;
-	border-color: yellow;
+	border-color: aqua;
 }
