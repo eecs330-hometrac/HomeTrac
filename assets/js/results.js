@@ -436,8 +436,8 @@ function compareTo() {
                       let loc_result = document.createElement('li');
                       loc_result.classList.add("list-group-item");
                       loc_result.innerHTML =
-                          `<span>${loc.name}<br>Rent: ${loc.rent}<br>Beds: ${loc.num_bed}</span>
-                          <a href="compare.html?first=${comp_name}&next=${loc.name}"><img style="position: relative; right: 100px; max-width: 250px; max-height: 50%" class="float-right" src="${loc.img}"/></a>`;
+                          `<a href="compare.html?first=${comp_name}&next=${loc.name}"><span>${loc.name}<br>Rent: ${loc.rent}<br>Beds: ${loc.num_bed}</span>
+                          <img style="position: relative; right: 100px; max-width: 250px; max-height: 50%" class="float-right" src="${loc.img}"/></a>`;
                       loc_list.appendChild(loc_result);
                     }
               }

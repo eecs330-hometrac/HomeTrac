@@ -361,21 +361,21 @@
 			                let loc_result = document.createElement('li');
 			                loc_result.classList.add("list-group-item");
 			                loc_result.innerHTML =
-			                    `<span>${loc.name}<br>Rent: ${loc.rent}<br>Beds: ${loc.num_bed}</span>
-			                    <a id="summ_link" href="summary.html?text=${loc.name}"><img style="max-width: 60%; max-height: 20%" class="float-right" src="${loc.img}"/></a>`;
+			                    `<a id="summ_link" href="summary.html?text=${loc.name}"><span>${loc.name}<br>Rent: ${loc.rent}<br>Beds: ${loc.num_bed}</span>
+			               		<img style="max-width: 60%; max-height: 20%" class="float-right" src="${loc.img}"/></a>`;
 			                loc_list.appendChild(loc_result);
 
 			                var contentString = 
-			                	`<div class="container">
+			                	`<a id="summ_link" href="summary.html?text=${loc.name}"><div class="container">
         								<div class="row">
 			                	<div id="content">
 						            <h1 id="firstHeading" class="firstHeading">${loc.name}</h1>
 						            <div id="bodyContent">
 						            <h6><b> Bedrooms: </h6> ${loc.num_bed} </b><b><h6>Bathrooms: </h6>${loc.num_bath} </b><b><h6>Rent: </h6>${loc.rent} </b><b><h6>Lease Length: </h6>${loc.lease_len}</b></h7>
-						            <a id="summ_link" href="summary.html?text=${loc.name}"><img style="position: relative; float: right; width: 150px; bottom: 150px; height: 150px; left: 70px;" src="${loc.img}"></a>
+						            <img style="position: relative; float: right; width: 150px; bottom: 150px; height: 150px; left: 70px;" src="${loc.img}">
 
 						            </div>
-						            </div>`;
+						            </div></a>`;
 						          var infowindow = new google.maps.InfoWindow({
 							          content: contentString
 							        });
@@ -410,7 +410,7 @@
                 <div class="collapse navbar-collapse"
                     id="navcol-1">
                     <ul class="nav navbar-nav mr-auto">
-                        <li class="nav-item" role="presentation"><a class="nav-link" href="index.html">Search</a></li><i class="fa fa-long-arrow-right" style="position: relative;top: 12px;"></i>
+                        <li class="nav-item" role="presentation"><a class="nav-link" href="index.html">Home</a></li><i class="fa fa-long-arrow-right" style="position: relative;top: 12px;"></i>
                         <li class="nav-item" role="presentation"><a class="nav-link active" href="#">Results</a></li>
                         <li class="dropdown nav-item"><a class="dropdown-toggle nav-link d-none" data-toggle="dropdown" aria-expanded="false" href="#">Dropdown </a>
                             <div class="dropdown-menu" role="menu"><a class="dropdown-item" role="presentation" href="#">First Item</a><a class="dropdown-item" role="presentation" href="#">Second Item</a><a class="dropdown-item" role="presentation" href="#">Third Item</a></div>
