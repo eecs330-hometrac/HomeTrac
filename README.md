@@ -1,5 +1,4 @@
-# P5
-HomeTrac - Apartment Listing Website for Northwestern Students/Faculty.
+HomeTrac - Prototype Apartment Listing Website for Northwestern Students/Faculty.
 
 <h2>Shows apartment listing information<h2>
 <img src="https://github.com/vbass0903/HomeTrac/blob/master/images/HomeTrac_detailed.png" alt="Apartment Listing Info">
